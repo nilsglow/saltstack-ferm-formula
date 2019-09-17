@@ -6,7 +6,7 @@
 ferm:
   pkg:
     - installed
-    - pkgs: {{ datamap.pkgs }}
+    - pkgs: {{ datamap.pkgs|tojson }}
 {% if 'service' in datamap %}
   service:
     - {{ datamap.ensure|default('running') }}
